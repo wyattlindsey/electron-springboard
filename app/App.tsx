@@ -1,29 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { Editor } from './views/editor/Editor';
 
 const App: React.FC = () => {
     return (
-        <Container>
-            <Editor />
-        </Container>
+        <h1>Electron Springboard</h1>
     );
 };
-
-const BaseStyles = css`
-    textarea {
-        outline: none;
-        margin: 0;
-    }
-`;
-
-const Container = styled.div`
-    ${BaseStyles}
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    background-color: lightgray;
-`;
 
 export default App;

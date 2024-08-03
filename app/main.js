@@ -1,14 +1,13 @@
 import { app, BrowserWindow, dialog, ipcMain } from 'electron';
 import * as path from 'path';
-import * as fs from 'fs';
 
 const __dirname = path.resolve();
 let mainWindow;
 
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1600,
+        height: 1200,
         webPreferences: {
             contextIsolation: true,
             nodeIntegration: true,
@@ -19,23 +18,7 @@ const createWindow = () => {
     mainWindow.loadURL('http://localhost:9000');
 };
 
-export const getFileFromUser = () => {
-    const files = dialog.showOpenDialogSync({
-        properties: ['openFile'],
-        filters: [
-            { name: 'Text Files', extensions: ['txt'] },
-            { name: 'Markdown Files', extensions: ['md'] },
-        ],
-    });
-
-    if (!files) return;
-
-    const file = fs.readFileSync(files[0], 'utf-8').toString();
-    mainWindow.webContents.send('file-opened', file);
-};
-
 app.on('ready', () => {
-    ipcMain.on('open-file-dialog', getFileFromUser);
     createWindow();
 });
 

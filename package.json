@@ -1,5 +1,5 @@
 {
-    "name": "electron-react-app",
+    "name": "electron-springboard",
     "version": "1.0.0",
     "main": "app/main.js",
     "license": "MIT",
@@ -15,9 +15,7 @@
         "electron": "^31.2.1",
         "path-browserify": "^1.0.1",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-markdown": "^9.0.1",
-        "styled-components": "^6.1.12"
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
         "@babel/core": "^7.24.9",
